@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+</head>
+<body>
+    <p id="text"></p>
+</body>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $.ajax({
+            url: "http://localhost:8080/greeting?name=hg",
+            beforeSend: function( xhr ) {
+                xhr.overrideMimeType( "text/plain; charset=x-user-defined" );
+            }
+        })
+        .done(function(data) {
+            console.log(data);
+            $("#text").text(data);
+        });
+    });
+</script>
+</html>
