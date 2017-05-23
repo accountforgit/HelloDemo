@@ -6,10 +6,10 @@ import org.apache.ibatis.annotations.Update;
 /**
  * Created by win_user on 23/05/2017.
  */
-public interface HelloText {
+public interface HelloTextMapper {
     @Select("select text from hellotext")
     public String getHelloText();
 
-    @Update("update hellotext set text=#{text}'")
-    void updateHelloText(String text);
+    @Update("update hellotext SET text=#{t} where id=1")
+    void updateHelloText(String t);
 }
