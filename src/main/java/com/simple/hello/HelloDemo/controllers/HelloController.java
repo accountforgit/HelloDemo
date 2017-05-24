@@ -26,7 +26,8 @@ public class HelloController {
     }
 
     @RequestMapping("/change")
-    public void change(@RequestParam(value="text", defaultValue="World") String text) {
+    public String change(@RequestParam(value="text", defaultValue="World") String text) {
         this.helloText.updateHelloText(text);
+        return "changed";
     }
 }

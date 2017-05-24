@@ -12,8 +12,8 @@
 <script type="text/javascript">
     $(document).ready(function(){
         $.ajax({
-            url: "http://localhost:8080/hellotext",
-            beforeSend: function( xhr ) {
+            url: "/hellotext",
+            beforeSend: function(xhr) {
                 xhr.overrideMimeType( "text/plain; charset=x-user-defined" );
             }
         })
